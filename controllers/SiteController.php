@@ -132,12 +132,12 @@ class SiteController extends Controller
     public function actionAbout()
     {
         //return $this->render('about');
-        $model = User::find()->where(['username' => 'test2'])->one();
+        $model = User::find()->where(['username' => 'admin'])->one();
         if (empty($model)) {
             $user = new User();
-            $user->username = 'test2';
-            $user->email = 'test2@aues.kz';
-            $user->setPassword('test2');
+            $user->username = 'admin';
+            $user->email = 'admin@aues.kz';
+            $user->setPassword('admin');
             $user->generateAuthKey();
             $user->status = 10;
             if ($user->save()) {

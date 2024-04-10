@@ -20,14 +20,29 @@ AppAsset::register($this);
 <head>
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
     <?php $this->registerCsrfMetaTags() ?>  
     <title><?= Html::encode($this->title) ?></title>
-    <link rel="icon" href="/aues.ico">
+    <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <?php $this->head() ?>
 </head>
 <body class="d-flex flex-column h-100">
 <?php $this->beginBody() ?>
+
+<style>
+    .navbar-nav{
+        color: black;
+        text-align: center;
+        background-color: #015490;
+        border-radius: 4px;
+
+    }
+    .nav-item{
+        border-bottom: 1px solid #015a9a;
+        border-radius: 4px;
+    }
+</style>
 
 <header>
     <!--<img src="/logo_new.png" style="position: fixed; margin-top: 4cm; z-index: -1" alt=""-->
@@ -37,13 +52,13 @@ AppAsset::register($this);
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar navbar-expand-md navbar-dark fixed-top',
-            'style' => 'background-color: #015590; height: 55px;',
+            'style' => 'background-color: #015590; height: 63px;',
         ],
     ]);
     $menuItems = [
         ['label' => 'Главная', 'url' => ['/site/index']],
-        ['label' => 'ППС', 'url' => ['/pps/pps']]
-        //['label' => 'О сайте', 'url' => ['/site/about']],
+        ['label' => 'ППС', 'url' => ['/pps/pps']],
+        ['label' => 'CREAT user tmp', 'url' => ['/site/about']],
         //['label' => 'Обратная связь', 'url' => ['/site/contact']],
     ];
     
@@ -63,7 +78,7 @@ AppAsset::register($this);
         'items' => $menuItems,
     ]);
     if (Yii::$app->user->isGuest) {
-        echo Html::tag('div',Html::a('Ввойти',['/site/login'],[
+        echo Html::tag('div',Html::a('Войти',['/site/login'],[
             'class' => [ 'btn btn-link login text-decoration-none'],
             'style'=>[';color: #ffffff']
             ]

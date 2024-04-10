@@ -5,7 +5,7 @@ use yii\db\Migration;
 /**
  * Handles the creation of table `{{%user}}`.
  */
-class m240409_041319_create_user_table extends Migration
+class m240410_075538_create_user_table extends Migration
 {
     public function up()
     {
@@ -23,6 +23,7 @@ class m240409_041319_create_user_table extends Migration
             'password_reset_token' => $this->string()->unique(),
             'email' => $this->string()->notNull()->unique(),
             'is_manager' => $this->boolean()->defaultValue(false),
+            'is_admin' => $this->boolean()->defaultValue(false),
             'status' => $this->smallInteger()->notNull()->defaultValue(10),
             'created_at' => $this->integer()->notNull(),
             'updated_at' => $this->integer()->notNull(),

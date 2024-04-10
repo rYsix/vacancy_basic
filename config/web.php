@@ -5,6 +5,7 @@ $db = require __DIR__ . '/db.php';
 
 $config = [
     'id' => 'basic',
+    'name' => 'Вакансии',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'aliases' => [
@@ -47,11 +48,12 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                '' => 'site/index',
                 'vacancy/<id:\d+>' => 'vacancy/detail',
                 'vacancy/create-vacancy' => 'vacancy/create-vacancy',
                 'vacancy/edit-vacancy/<id:\d+>' => 'vacancy/edit-vacancy',
                 'access-file/<filepath:\S+>' => 'file-access/access-file',
-                'test' => 'pps/pps'
+                'pps' => 'pps/pps'
                 //'uploads/vacancy_responces/' => 'file-access/access',
                 //'uploads/vacancy_responces/<filepath:.+>' => 'file-access/access',
             ],
