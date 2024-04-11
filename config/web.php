@@ -53,7 +53,8 @@ $config = [
                 'vacancy/create-vacancy' => 'vacancy/create-vacancy',
                 'vacancy/edit-vacancy/<id:\d+>' => 'vacancy/edit-vacancy',
                 'access-file/<filepath:\S+>' => 'file-access/access-file',
-                'pps' => 'pps/pps'
+                'pps' => 'pps/pps',
+                'test' => 'admin/admin'
                 //'uploads/vacancy_responces/' => 'file-access/access',
                 //'uploads/vacancy_responces/<filepath:.+>' => 'file-access/access',
             ],

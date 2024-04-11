@@ -29,7 +29,7 @@ $this->title = 'Вакансии';
     <div class=" bg-transparent rounded-3">
         <div class="container-fluid py-5 text-center">
             <h1 class="display-4">Вакантные Позиции</h1>
-            <p class="fs-5 fw-light">Только для студентов АУЭС</p>
+            <p class="fs-5 fw-light">АУЭС</p>
         </div>
     </div>
 

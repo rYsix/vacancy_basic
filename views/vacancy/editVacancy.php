@@ -117,9 +117,9 @@ $this->params['breadcrumbs'][] = $this->title;
 
         <?= $form->field($model, 'contact_info')->textInput(['maxlength' => true])->label('<i class="fa fa-phone"></i> Контактная информация') ?>
             
-        <hr> <!-- Разделитель -->
+        <hr>
 
-        <div class="form-group text-center"> <!-- Контейнер для центрирования кнопки -->
+        <div class="form-group text-center"> 
             <?= Html::submitButton('Сохранить', ['class' => 'btn btn-success btn-lg mt-3']) ?> <!-- Добавлен отступ и классы для стилизации -->
         </div>
 

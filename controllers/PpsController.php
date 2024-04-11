@@ -21,31 +21,6 @@ use yii\web\UploadedFile;
  */
 class PpsController extends Controller
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function behaviors()
-    {
-        return [
-            'access' => [
-                'class' => AccessControl::class,
-                'only' => ['logout', 'signup','create-vacancy','edit-vacancy','responses'], 
-                'rules' => [
-                    [
-                        'actions' => ['create-vacancy','edit-vacancy','responses'],
-                        'allow' => true,
-                        'matchCallback' => function ($rule, $action) {
-                            if (Yii::$app->user->isGuest || Yii::$app->user->identity->is_manager === false) {
-                                throw new \yii\web\ForbiddenHttpException('Доступ запрещен');
-                            }
-                            return true;
-                        },
-                    ],
-                ],
-            ],
-        ];
-    }
-
     public function actions()
     {
         return [
