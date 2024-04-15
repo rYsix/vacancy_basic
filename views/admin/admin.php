@@ -34,7 +34,7 @@ $this->title = 'admin';
                                     <td><?= $user->is_admin ? '<i class="fa fa-check"></i>' : '<i class="fa fa-times"></i>' ?></td>
                                     <td>
                                         <?= Html::a('<i class="fa fa-edit"></i> Ред.', ['admin/edit-user', 'id' => $user->id], ['class' => 'btn btn-primary']) ?>
-                                        <?= Html::a('<i class="fa fa-trash"></i>', ['delete', 'id' => $user->id], [
+                                        <?= Html::a('<i class="fa fa-trash"></i>', ['admin/delete-user', 'id' => $user->id], [
                                                 'class' => 'btn btn-danger',
                                                 'data' => [
                                                     'confirm' => 'Вы уверены, что хотите удалить этого пользователя?',

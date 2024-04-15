@@ -4,13 +4,38 @@
 
 use yii\helpers\Html;
 
-$this->title = 'About';
-$this->params['breadcrumbs'][] = $this->title;
+$this->title = 'О нас - Vacancy';
 ?>
-<div class="site-about">
-    <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>
-        This is the About page. You may modify the following file to customize its content:
-    </p>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    <h1 class="card-title"><?= Html::encode($this->title) ?></h1>
+                </div>
+                <div class="card-body">
+                    <p>
+                        Vacancy - это платформа для поиска вакансий и подачи заявлений на конкурс преподавательского состава.
+                        Мы стремимся обеспечить удобный и эффективный способ для работодателей размещать вакансии и привлекать кандидатов,
+                        а также для соискателей находить подходящие вакансии и подавать заявления на участие в конкурсах.
+                    </p>
+
+                    <p>
+                        Наша цель - помочь работодателям найти лучших кандидатов и помочь соискателям найти наиболее подходящие вакансии
+                        в соответствии с их навыками и предпочтениями.
+                    </p>
+
+                    <p>
+                        Мы стремимся создать в нашем сообществе атмосферу доверия и сотрудничества, где работодатели и соискатели могут
+                        встречаться и находить взаимную выгоду.
+                    </p>
+
+                    <p>
+                        По вопросам сотрудничества или обратной связи, пожалуйста, свяжитесь с нами.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

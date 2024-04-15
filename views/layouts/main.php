@@ -59,7 +59,6 @@ AppAsset::register($this);
     $menuItems = [
         ['label' => 'Главная', 'url' => ['/site/index']],
         ['label' => 'ППС', 'url' => ['/pps/pps']],
-        ['label' => 'CREAT user tmp', 'url' => ['/site/about']],
         //['label' => 'Обратная связь', 'url' => ['/site/contact']],
     ];
     
@@ -67,6 +66,10 @@ AppAsset::register($this);
     if ($isManager) {
         $menuItems[] = ['label' => 'Создать вакансию', 'url' => ['/vacancy/create-vacancy']];
         $menuItems[] = ['label' => 'Просмотреть отклики', 'url' => ['/vacancy/responses']];
+    }
+    $isAdmin = !Yii::$app->user->isGuest && Yii::$app->user->identity->is_admin;
+    if ($isAdmin) {
+        $menuItems[] = ['label' => 'Админ', 'url' => ['/test']];
     }
     
     /*if (Yii::$app->user->isGuest) {

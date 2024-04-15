@@ -30,10 +30,10 @@ class AdminController extends Controller
         return [
             'access' => [
                 'class' => AccessControl::class,
-                'only' => ['admin','edit-user'], 
+                'only' => ['admin','edit-user','create-user'], 
                 'rules' => [
                     [
-                        'actions' => ['admin','edit-user'],
+                        'actions' => ['admin','edit-user','create-user'],
                         'allow' => true,
                         'matchCallback' => function ($rule, $action) {
                             if (Yii::$app->user->isGuest === false and Yii::$app->user->identity->is_admin) {
@@ -42,6 +42,12 @@ class AdminController extends Controller
                             throw new \yii\web\ForbiddenHttpException('Доступ запрещен');
                         },
                     ],
+                ],
+            ],
+            'verbs' => [
+                'class' => VerbFilter::class,
+                'actions' => [
+                    'create-user' => ['post'],
                 ],
             ],
         ];
@@ -90,6 +96,7 @@ class AdminController extends Controller
             }            
         } else {
             Yii::$app->session->setFlash('error', 'Пользователь не найден.');
+            return $this->redirect(['admin']);
         }
 
         return $this->render('editUser', [
@@ -115,6 +122,24 @@ class AdminController extends Controller
             }
         }
 
+        return $this->redirect(['admin']);
+    }
+
+    public function actionDeleteUser($id)
+    {
+        if (Yii::$app->request->isPost) {
+            $user = User::findOne($id);
+            if ($user !== null){
+                $user ->delete();
+                Yii::$app->session->setFlash('success','Пользователь удалён',);
+            }
+            else {
+                Yii::$app->session->setFlash('error', 'Пользователь не найден.');
+                return $this->redirect(['admin']);
+            }
+            
+            
+        }
         return $this->redirect(['admin']);
     }
 

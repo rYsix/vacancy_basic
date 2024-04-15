@@ -131,7 +131,8 @@ class SiteController extends Controller
      */
     public function actionAbout()
     {
-        //return $this->render('about');
+        return $this->render('about');
+        /*
         $model = User::find()->where(['username' => 'admin'])->one();
         if (empty($model)) {
             $user = new User();
@@ -144,5 +145,6 @@ class SiteController extends Controller
                 echo 'good';
             }
         }
+        */
     }
 }
